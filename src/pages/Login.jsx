@@ -7,16 +7,15 @@ import image from "../assets/result.svg"
 import { Link, useNavigate } from "react-router-dom"
 import Box from "@mui/material/Box"
 import TextField from "@mui/material/TextField"
-import { Button } from "@mui/material"
+import Button from "@mui/material/Button"
 import { Formik } from "formik"
 
 const Login = () => {
   const navigate = useNavigate()
 
-   const loginSchema = {
+  //? harici validasyon şemasi
+  const loginSchema = {}
 
-
-   }
   return (
     <Container maxWidth="lg">
       <Grid
@@ -53,53 +52,41 @@ const Login = () => {
           >
             Login
           </Typography>
-         
-        <Formik
-        
-        initialValues={{email:"", password:""}}
-        validationSchema={loginSchema}
-        onSubmit={(values, action) => (
-         // TODO login (values) POST islemi yapmamiz lazim. 
-        action.resetForm()
-        action.setSubmitting(false)
 
-        )}
-      >
-
-      { () => (
-
-
-
-
-      )}
-
-
-
-        </Formik>
-
-
-          <Box
-            component="form"
-            sx={{ display: "flex", flexDirection: "column", gap: 2 }}
+          <Formik
+            initialValues={{ email: "", password: "" }}
+            validationSchema={loginSchema}
+            onSubmit={(values, action) => {
+              //TODO login(values)  POST islemi
+              action.resetForm()
+              action.setSubmitting(false)
+            }}
           >
-            <TextField
-              label="Email"
-              name="email"
-              id="email"
-              type="email"
-              variant="outlined"
-            />
-            <TextField
-              label="password"
-              name="password"
-              id="password"
-              type="password"
-              variant="outlined"
-            />
-            <Button variant="contained" type="submit">
-              Submit
-            </Button>
-          </Box>
+            {() => (
+              <Box
+                component="form"
+                sx={{ display: "flex", flexDirection: "column", gap: 2 }}
+              >
+                <TextField
+                  label="Email"
+                  name="email"
+                  id="email"
+                  type="email"
+                  variant="outlined"
+                />
+                <TextField
+                  label="password"
+                  name="password"
+                  id="password"
+                  type="password"
+                  variant="outlined"
+                />
+                <Button variant="contained" type="submit">
+                  Submit
+                </Button>
+              </Box>
+            )}
+          </Formik>
 
           <Box sx={{ textAlign: "center", mt: 2 }}>
             <Link to="/register">Do you have not an account?</Link>
