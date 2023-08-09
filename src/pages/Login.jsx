@@ -59,19 +59,19 @@ const Login = () => {
         initialValues={{email:"", password:""}}
         validationSchema={loginSchema}
         onSubmit={(values, action) => (
-
+         // TODO login (values) POST islemi yapmamiz lazim. 
         action.resetForm()
+        action.setSubmitting(false)
 
         )}
-        
-        
-        
-        
-        
-        
-        >
+      >
 
-      
+      { () => (
+
+
+
+
+      )}
 
 
 
