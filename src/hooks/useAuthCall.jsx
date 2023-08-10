@@ -49,7 +49,7 @@ const useAuthCall = () => {
     dispatch(fetchStart())
     try {
       const { data } = await axios.post(
-        `${BASE_URL}/account/auth/login/`,
+        `${import.meta.env.VITE_BASE_URL}/account/auth/login/`,
         userData
       )
       dispatch(loginSuccess(data))
@@ -67,7 +67,7 @@ const useAuthCall = () => {
 
     dispatch(fetchStart())
     try {
-      await axios.post(`${BASE_URL}/account/auth/logout/`)
+      await axios.post(`${import.meta.env.VITE_BASE_URL}/account/auth/logout/`)
       dispatch(logoutSuccess())
       toastSuccessNotify("logout islemi basarili")
       navigate("/")
