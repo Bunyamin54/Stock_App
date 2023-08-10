@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom"
 import { useDispatch } from "react-redux"
 import { fetchFail, fetchStart, loginSuccess } from "../features/authSlice"
 
-//? Bir hook sadece bir react component ve bir custom hook icersinde cagrilabilir. Bir Js fonksiyonu icerisinde hook cagiralamaz.
+// //? Bir hook sadece bir react component ve bir custom hook icersinde cagrilabilir. Bir Js fonksiyonu icerisinde hook cagiralamaz.
 
 export const login = async (userData) => {
   const navigate = useNavigate()

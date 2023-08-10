@@ -4,7 +4,7 @@ import Grid from "@mui/material/Grid"
 import Typography from "@mui/material/Typography"
 import LockIcon from "@mui/icons-material/Lock"
 import image from "../assets/result.svg"
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import Box from "@mui/material/Box"
 import TextField from "@mui/material/TextField"
 import Button from "@mui/material/Button"
@@ -13,8 +13,6 @@ import { object, string } from "yup"
 import { login } from "../hooks/authApiCall"
 
 const Login = () => {
-  const navigate = useNavigate()
-
   //? harici validasyon şemasi
   const loginSchema = object({
     email: string()
